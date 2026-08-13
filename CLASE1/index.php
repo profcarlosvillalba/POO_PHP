@@ -10,69 +10,101 @@
 
     <?php
 
-        class Persona
-        {
-            private $dni;
-            private $nombre;
-            private $apellido;
-            private $sexo;
-            private $fecha_nacimiento;
-            private $domicilio;
+    class Persona
+{
+    private string $dni;
+    private string $nombre;
+    private string $apellido;
+    private string $sexo;
+    private string $fecha_nacimiento;
+    private string $domicilio;
 
-            public function __construct($dni, $nombre, $apellido, $sexo, $fecha_nacimiento, $domicilio) {
-                $this->dni = $dni;
-                $this->nombre = $nombre;
-                $this->apellido = $apellido; 
-                $this->sexo = $sexo; 
-                $this->fecha_nacimiento = $fecha_nacimiento; 
-                $this->domicilio = $domicilio; 
-            }
+    public function __construct(
+        string $dni,
+        string $nombre,
+        string $apellido,
+        string $sexo,
+        string $fecha_nacimiento,
+        string $domicilio
+    ) {
+        $this->dni = $dni;
+        $this->nombre = $nombre;
+        $this->apellido = $apellido;
+        $this->sexo = $sexo;
+        $this->fecha_nacimiento = $fecha_nacimiento;
+        $this->domicilio = $domicilio;
+    }
 
-            public function getDni(){
-                return $this->dni;
-            }
-            
+    public function getDni(): string
+    {
+        return $this->dni;
+    }
 
-            public function getNombre(){
-                return $this->nombre;
-            }
+    public function getNombre(): string
+    {
+        return $this->nombre;
+    }
 
-            public function getApellido(){
-                return $this->apellido;
-            }
+    public function getApellido(): string
+    {
+        return $this->apellido;
+    }
 
-            public function getSexo(){
-                return $this->sexo;
-            }
-            public function getFecha_nacimiento(){
-                return $this->fecha_nacimiento;
-            }
+    public function getSexo(): string
+    {
+        return $this->sexo;
+    }
 
-            public function setNombre($nombre){
-                $this->nombre = $nombre;
-            }
+    public function getFechaNacimiento(): string
+    {
+        return $this->fecha_nacimiento;
+    }
 
-            public function setApellido($apellido){
-                $this->apellido = $apellido;
-            }
+    public function setNombre(string $nombre): void
+    {
+        $this->nombre = $nombre;
+    }
 
-            public function setSexo($sexo){
-                $this->sexo = $sexo;
-            }
-            public function setFecha_nacimiento($fecha_nacimiento){
-                $this->fecha_nacimiento = $fecha_nacimiento;
-            }
+    public function setApellido(string $apellido): void
+    {
+        $this->apellido = $apellido;
+    }
 
-            public function saludar(){
-                return "Hola, mi dni es " . $this->getDni() . " mi nombre es " . $this->getNombre() . " mi apellido es " . $this->getApellido() . " mi sexo es " . $this->getSexo() . " mi fecha de nacimiento es " . $this->getFecha_nacimiento();
-            }
-        }
+    public function setSexo(string $sexo): void
+    {
+        $this->sexo = $sexo;
+    }
 
-        $persona = new Persona("37590136", "caaarlos","villalba", "Masculino", "1993-09-14", "CH 32");
+    public function setFechaNacimiento(string $fecha_nacimiento): void
+    {
+        $this->fecha_nacimiento = $fecha_nacimiento;
+    }
 
-        $persona->setNombre("carlos");
+    public function saludar(): string
+    {
+        return "Hola, mi DNI es " . $this->dni .
+               ", mi nombre es " . $this->nombre .
+               ", mi apellido es " . $this->apellido .
+               ", mi sexo es " . $this->sexo .
+               ", mi fecha de nacimiento es " . $this->fecha_nacimiento;
+    }
+}
 
-        echo $persona->saludar();
+
+
+
+   $persona = new Persona(
+    "37590136",
+    "Carlos",
+    "Villalba",
+    "Masculino",
+    "1993-09-14",
+    "CH 32"
+);
+
+$persona->setNombre("Carlos");
+
+echo $persona->saludar();
         
     ?>   
     
